@@ -7,8 +7,9 @@ debug = DebugToolbarExtension(app)
 
 @app.route('/')
 def main_page():
-    story_prompts = story.prompts
-    return render_template('home.html', story_prompts = story_prompts )
+    story_template = story.template
+    story2_template = story2.template
+    return render_template('home.html', story_template = story_template, story2_template = story2_template )
 
 @app.route('/story')
 def story_page():
@@ -25,4 +26,14 @@ def story_page():
 
     return render_template('story.html', complete_story = complete_story    )
 
+
+@app.route('/form')
+def form_page():
+    template = request.args.get('choice')
+    story_prompts = story.prompts
+    story2_prompts = story2.prompts
+   
+    
+    return render_template('form.html', template = template, story_prompts = story_prompts,
+    story2_prompts = story2_prompts )
 

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title%}form-1{% endblock %}
+{%block h1%} Enter your answers!{% endblock %}
+{% block content %}
+
+
+
+
+
+
+
+{% if template =='story' %}
+<form action="/story">
+    {% for prompt in story_prompts %}
+    <div>
+        <label for="">{{prompt}}</label> <input type="text" name="{{prompt}}">
+    </div>
+    {% endfor %}
+    <button>submit!</button>
+</form>
+
+{% else %}
+<form action="/story">
+    {% for prompt in story2_prompts %}
+    <div>
+        <label for="">{{prompt}}</label> <input type="text" name="{{prompt}}">
+    </div>
+    {% endfor %}
+    <button>submit!</button>
+</form>
+{% endif %}
+
+
+
+
+
+{%endblock%}

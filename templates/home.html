@@ -1,14 +1,20 @@
 {% extends 'base.html' %}
-{% block title%}home/form{% endblock %}
+{% block title%}home{% endblock %}
 {%block h1%} Welcome to madlibs!{% endblock %}
 {% block content %}
-<form action="/story">
-    {% for prompt in story_prompts %}
-    <div>
-        <label for="">{{prompt}}</label> <input type="text" name="{{prompt}}">
-    </div>
-    {% endfor %}
-    <button>submit!</button>
+<h3>Choose a story template:</h3>
+
+<form action="/form">
+    <label for="">Select story template: </label>
+    <select name="choice" id="">
+        <option value="story">{{story_template}}</option>
+        <option value="story2">{{story2_template}}</option>
+    </select>
+    <button>Submit!</button>
 </form>
+
+
+
+
 
 {%endblock%}

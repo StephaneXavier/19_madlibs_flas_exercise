@@ -43,3 +43,9 @@ story = Story(
     """Once upon a time in a long-ago {place}, there lived a
        large {adjective} {noun}. It loved to {verb} {plural_noun}."""
 )
+
+
+story2 = Story(
+    ['adjective','noun','verb_past_tense','adverb'],"""Today I went to the zoo. I saw a(n)
+    {adjective}. {noun} jumping up and down in its tree. He {verb_past_tense} {adverb}"""
+)
