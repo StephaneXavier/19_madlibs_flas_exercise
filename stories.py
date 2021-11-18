@@ -47,5 +47,5 @@ story = Story(
 
 story2 = Story(
     ['adjective','noun','verb_past_tense','adverb'],"""Today I went to the zoo. I saw a(n)
-    {adjective}. {noun} jumping up and down in its tree. He {verb_past_tense} {adverb}"""
+    {adjective} {noun} jumping up and down in its tree. He {verb_past_tense} {adverb}"""
 )

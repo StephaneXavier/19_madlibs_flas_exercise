@@ -18,14 +18,30 @@ def story_page():
     verb = request.args.get('verb')
     adjective = request.args.get('adjective')
     plural_noun = request.args.get('plural_noun')
+   
     answers_dic = {'place':place,'noun':noun,'verb':verb,'adjective':adjective,
     'plural_noun':plural_noun}
      
-
     complete_story = story.generate(answers_dic)
 
     return render_template('story.html', complete_story = complete_story    )
 
+
+@app.route('/story2')
+def story2_page():
+    adverb = request.args.get('adverb')
+    noun = request.args.get('noun')
+    verb_past_tense = request.args.get('verb_past_tense')
+    adjective = request.args.get('adjective')
+    
+   
+
+    answers_dic = {'adverb':adverb,'noun':noun,'verb_past_tense':verb_past_tense,'adjective':adjective}
+     
+
+    complete_story = story2.generate(answers_dic)
+
+    return render_template('story2.html', complete_story = complete_story    )
 
 @app.route('/form')
 def form_page():
